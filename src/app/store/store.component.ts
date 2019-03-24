@@ -4,7 +4,6 @@ import {ProductRepository} from '../model/product.repository';
 
 @Component({
   selector: 'store',
-  moduleId: module.id,
   templateUrl: 'store.component.html'
 })
 export class StoreComponent {
