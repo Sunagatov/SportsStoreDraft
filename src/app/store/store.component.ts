@@ -11,7 +11,8 @@ export class StoreComponent {
   public productsPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repository: ProductRepository) {}
+  constructor(private repository: ProductRepository) {
+  }
 
   get products(): Product[] {
     const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
@@ -35,9 +36,8 @@ export class StoreComponent {
     this.changePage(1);
   }
 
-  get pageNumbers(): number[] {
-    return Array(Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage))
-      .fill(0).map((x, i) => i + 1);
+  get pageCount(): number {
+    return Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage);
   }
 }
 
