@@ -1,5 +1,6 @@
 <div class="navbar navbar-inverse bg-inverse">
   <a class="navbar-brand">SPORTS STORE</a>
+  <cart-summary></cart-summary>
 </div>
 
 <div class="col-xs-3 p-a-1">
@@ -21,7 +22,12 @@
         {{ product.price | currency:"USD":true:"2.2-2" }}
       </span>
     </h4>
-    <div class="card-text p-a-1">{{product.description}}</div>
+    <div class="card-text p-a-1">
+      {{product.description}}
+      <button class="btn btn-success btn-sm pull-xs-right" (click)="addProductToCart(product)">
+        Add To Cart
+      </button>
+    </div>
   </div>
 
   <div class="form-inline pull-xs-left m-r-1">
@@ -34,7 +40,7 @@
   </div>
 
   <div class="btn-group pull-xs-right">
-    <button *counter="let page of pageCount"  (click)="changePage(page)" class="btn btn-outline-primary"
+    <button *counter="let page of pageCount" (click)="changePage(page)" class="btn btn-outline-primary"
             [class.active]="page == selectedPage">
       {{page}}
     </button>
