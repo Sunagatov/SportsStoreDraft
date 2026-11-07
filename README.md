@@ -1,6 +1,6 @@
-# SportsStore
+# Sports Store Draft
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+An Angular storefront exercise with a product catalogue, shopping cart and checkout forms.
 
 <p>
   <a href="https://buymeacoffee.com/lucky_1uck">
@@ -8,39 +8,60 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   </a>
 </p>
 
-## Development server
+## What is included
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Product and category browsing with a static product data source.
+- Cart summary and cart detail components.
+- Checkout and order models.
+- A separate JSON Server script with authentication middleware for backend experiments.
 
-## Code scaffolding
+The default `StaticDataSource` returns in-memory products and logs orders to the
+console. Checkout does not imply a persisted order or a payment integration.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Stack
 
-## Build
+Angular 7.2 · TypeScript 3.2 · RxJS · Bootstrap · Angular CLI 7.3
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Local development
 
-## Running unit tests
+Use a Node/npm environment compatible with Angular CLI 7.3. The dependency
+versions in [package.json](package.json) belong to that original toolchain.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start
+```
 
-## Running end-to-end tests
+Open `http://localhost:4200/`. To start the optional mock API in another terminal:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+npm run json
+```
 
-## Further help
+The mock server listens on port `3500`. The current static data source does not
+automatically switch to this API.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Available commands
 
----
+| Command | Purpose |
+| --- | --- |
+| `npm run build` | Compile the Angular application |
+| `npm test` | Run Karma/Jasmine tests |
+| `npm run lint` | Run the configured TSLint checks |
+| `npm run e2e` | Run Protractor end-to-end tests |
+
+## Find your way around
+
+- [Store UI](src/app/store): catalogue, cart and checkout components.
+- [Models](src/app/model): products, cart, orders and the static data source.
+- [Mock data](data.js) and [middleware](authMiddleware.js): JSON Server support.
 
 ## ☕ Support the project
 
-If this project helps you learn or inspires your own work, you can support its development.
+If this project helps you learn or build, you can support its development.
 
 <p>
   <a href="https://buymeacoffee.com/lucky_1uck">
     <img src="https://img.shields.io/badge/Support_the_project-FFDD00?style=for-the-badge&amp;logo=buymeacoffee&amp;logoColor=black" alt="Support the project" width="260" height="40">
   </a>
 </p>
-
